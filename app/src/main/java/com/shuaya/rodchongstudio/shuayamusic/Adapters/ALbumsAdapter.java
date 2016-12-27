@@ -1,11 +1,9 @@
-package com.shuaya.rodchongstudio.shuayamusic.Adapters;
+package com.shuaya.rodchongstudio.shuayamusic.adapters;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
-import android.support.annotation.UiThread;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,16 +12,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.shuaya.rodchongstudio.shuayamusic.Models.AlbumModels.Album;
-import com.shuaya.rodchongstudio.shuayamusic.Models.RankingModels.RankingMusic;
+import com.shuaya.rodchongstudio.shuayamusic.models.AlbumModels.Album;
 import com.shuaya.rodchongstudio.shuayamusic.R;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
-import Utils.DownlaodImage;
-import Utils.HttpUtil;
+import utils.HttpUtil;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;

@@ -1,8 +1,7 @@
-package com.shuaya.rodchongstudio.shuayamusic.Adapters;
+package com.shuaya.rodchongstudio.shuayamusic.adapters;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,16 +11,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.shuaya.rodchongstudio.shuayamusic.Models.Music;
-import com.shuaya.rodchongstudio.shuayamusic.Models.RankingModels.RankingMusic;
+import com.shuaya.rodchongstudio.shuayamusic.models.RankingModels.RankingMusic;
 import com.shuaya.rodchongstudio.shuayamusic.R;
-import com.shuaya.rodchongstudio.shuayamusic.Ui.MainActivity;
-import com.shuaya.rodchongstudio.shuayamusic.Widget.PopupMenu;
+import com.shuaya.rodchongstudio.shuayamusic.widget.PopupMenu;
 
 import java.util.List;
 
-import Utils.Application;
-import Utils.MusicPlayer.MusicPlayer;
+import utils.Application;
+import utils.musicplayer.MusicPlayer;
 
 /**
  * Created by RodChong on 2016/12/20.

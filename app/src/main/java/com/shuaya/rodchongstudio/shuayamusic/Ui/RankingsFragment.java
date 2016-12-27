@@ -1,4 +1,4 @@
-package com.shuaya.rodchongstudio.shuayamusic.Ui;
+package com.shuaya.rodchongstudio.shuayamusic.ui;
 
 
 import android.os.Bundle;
@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.shuaya.rodchongstudio.shuayamusic.Adapters.RankingsFragmentPagerAdapter;
+import com.shuaya.rodchongstudio.shuayamusic.adapters.RankingsFragmentPagerAdapter;
 import com.shuaya.rodchongstudio.shuayamusic.R;
 
 /**

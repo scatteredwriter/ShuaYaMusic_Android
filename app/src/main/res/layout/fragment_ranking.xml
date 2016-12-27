@@ -3,7 +3,7 @@
     android:id="@+id/fragment_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.shuaya.rodchongstudio.shuayamusic.Ui.RankingFragment">
+    tools:context="com.shuaya.rodchongstudio.shuayamusic.ui.RankingFragment">
 
     <ListView
         android:id="@+id/rankings_listview"

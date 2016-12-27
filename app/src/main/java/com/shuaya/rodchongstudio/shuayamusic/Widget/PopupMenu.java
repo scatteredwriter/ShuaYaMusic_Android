@@ -1,4 +1,4 @@
-package com.shuaya.rodchongstudio.shuayamusic.Widget;
+package com.shuaya.rodchongstudio.shuayamusic.widget;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,14 +8,12 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-import com.shuaya.rodchongstudio.shuayamusic.Models.Music;
-import com.shuaya.rodchongstudio.shuayamusic.Models.RankingModels.RankingMusic;
+import com.shuaya.rodchongstudio.shuayamusic.models.RankingModels.RankingMusic;
 import com.shuaya.rodchongstudio.shuayamusic.R;
 
 import java.util.ArrayList;

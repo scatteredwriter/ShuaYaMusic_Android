@@ -1,28 +1,25 @@
-package com.shuaya.rodchongstudio.shuayamusic.Ui;
+package com.shuaya.rodchongstudio.shuayamusic.ui;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.ContextMenu;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.shuaya.rodchongstudio.shuayamusic.Adapters.RankingsAdapter;
-import com.shuaya.rodchongstudio.shuayamusic.Models.RankingModels.RankingBean;
-import com.shuaya.rodchongstudio.shuayamusic.Models.RankingModels.RankingMusic;
+import com.shuaya.rodchongstudio.shuayamusic.adapters.RankingsAdapter;
+import com.shuaya.rodchongstudio.shuayamusic.models.RankingModels.RankingBean;
+import com.shuaya.rodchongstudio.shuayamusic.models.RankingModels.RankingMusic;
 import com.shuaya.rodchongstudio.shuayamusic.R;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import Utils.HttpUtil;
-import Utils.MusicPlayer.MusicPlayer;
+import utils.HttpUtil;
+import utils.musicplayer.MusicPlayer;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;

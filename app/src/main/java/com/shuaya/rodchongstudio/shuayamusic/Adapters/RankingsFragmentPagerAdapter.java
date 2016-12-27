@@ -1,16 +1,13 @@
-package com.shuaya.rodchongstudio.shuayamusic.Adapters;
+package com.shuaya.rodchongstudio.shuayamusic.adapters;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.view.ViewGroup;
 
-import com.shuaya.rodchongstudio.shuayamusic.Ui.RankingFragment;
+import com.shuaya.rodchongstudio.shuayamusic.ui.RankingFragment;
 import com.shuaya.rodchongstudio.shuayamusic.R;
-
-import java.util.ArrayList;
 
 /**
  * Created by RodChong on 2016/12/20.

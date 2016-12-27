@@ -1,6 +1,6 @@
-package com.shuaya.rodchongstudio.shuayamusic.Models.AlbumModels;
+package com.shuaya.rodchongstudio.shuayamusic.models.AlbumModels;
 
-import com.shuaya.rodchongstudio.shuayamusic.Models.SingerBean;
+import com.shuaya.rodchongstudio.shuayamusic.models.SingerBean;
 
 import java.util.List;
 

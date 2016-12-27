@@ -1,4 +1,4 @@
-package Utils.MusicPlayer;
+package utils.musicplayer;
 
 /**
  * Created by RodChong on 2016/12/27.

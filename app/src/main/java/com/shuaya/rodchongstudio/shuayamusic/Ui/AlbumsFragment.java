@@ -1,4 +1,4 @@
-package com.shuaya.rodchongstudio.shuayamusic.Ui;
+package com.shuaya.rodchongstudio.shuayamusic.ui;
 
 
 import android.os.Bundle;
@@ -9,16 +9,16 @@ import android.view.ViewGroup;
 import android.widget.GridView;
 
 import com.google.gson.Gson;
-import com.shuaya.rodchongstudio.shuayamusic.Adapters.ALbumsAdapter;
-import com.shuaya.rodchongstudio.shuayamusic.Models.AlbumModels.Album;
-import com.shuaya.rodchongstudio.shuayamusic.Models.AlbumModels.AlbumBean;
+import com.shuaya.rodchongstudio.shuayamusic.adapters.ALbumsAdapter;
+import com.shuaya.rodchongstudio.shuayamusic.models.AlbumModels.Album;
+import com.shuaya.rodchongstudio.shuayamusic.models.AlbumModels.AlbumBean;
 import com.shuaya.rodchongstudio.shuayamusic.R;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import Utils.HttpUtil;
+import utils.HttpUtil;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;

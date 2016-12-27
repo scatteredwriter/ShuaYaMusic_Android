@@ -1,6 +1,4 @@
-package com.shuaya.rodchongstudio.shuayamusic.Models.SearchModels;
-
-import com.google.gson.annotations.SerializedName;
+package com.shuaya.rodchongstudio.shuayamusic.models.SearchModels;
 
 import java.util.List;
 

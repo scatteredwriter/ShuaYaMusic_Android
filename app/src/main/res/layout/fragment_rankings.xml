@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginBottom="55dp"
-    tools:context="com.shuaya.rodchongstudio.shuayamusic.Ui.RankingsFragment">
+    tools:context="com.shuaya.rodchongstudio.shuayamusic.ui.RankingsFragment">
 
     <android.support.design.widget.TabLayout
         android:id="@+id/rankings_tablayout"

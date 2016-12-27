@@ -1,8 +1,6 @@
-package com.shuaya.rodchongstudio.shuayamusic.Models.AlbumModels;
+package com.shuaya.rodchongstudio.shuayamusic.models.AlbumModels;
 
 import com.google.gson.annotations.SerializedName;
-
-import java.util.List;
 
 /**
  * Created by RodChong on 2016/12/21.

@@ -1,12 +1,8 @@
-package com.shuaya.rodchongstudio.shuayamusic.Models.RankingModels;
+package com.shuaya.rodchongstudio.shuayamusic.models.RankingModels;
 
 import com.google.gson.annotations.SerializedName;
-import com.shuaya.rodchongstudio.shuayamusic.Models.Music;
-import com.shuaya.rodchongstudio.shuayamusic.Models.PayBean;
-import com.shuaya.rodchongstudio.shuayamusic.Models.PreviewBean;
-import com.shuaya.rodchongstudio.shuayamusic.Models.SingerBean;
-
-import java.util.List;
+import com.shuaya.rodchongstudio.shuayamusic.models.Music;
+import com.shuaya.rodchongstudio.shuayamusic.models.SingerBean;
 
 /**
  * Created by RodChong on 2016/12/20.

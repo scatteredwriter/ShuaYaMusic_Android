@@ -1,13 +1,10 @@
-package com.shuaya.rodchongstudio.shuayamusic.Ui;
+package com.shuaya.rodchongstudio.shuayamusic.ui;
 
-import android.app.Activity;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
 /**
  * Created by RodChong on 2016/12/19.

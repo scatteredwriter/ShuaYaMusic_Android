@@ -1,4 +1,4 @@
-package com.shuaya.rodchongstudio.shuayamusic.Adapters;
+package com.shuaya.rodchongstudio.shuayamusic.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.shuaya.rodchongstudio.shuayamusic.Models.Music;
+import com.shuaya.rodchongstudio.shuayamusic.models.Music;
 import com.shuaya.rodchongstudio.shuayamusic.R;
 
 import java.util.List;

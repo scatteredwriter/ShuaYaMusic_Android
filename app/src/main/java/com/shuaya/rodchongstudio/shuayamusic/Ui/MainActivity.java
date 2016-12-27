@@ -1,8 +1,7 @@
-package com.shuaya.rodchongstudio.shuayamusic.Ui;
+package com.shuaya.rodchongstudio.shuayamusic.ui;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -10,7 +9,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,17 +17,15 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.shuaya.rodchongstudio.shuayamusic.Models.Music;
-import com.shuaya.rodchongstudio.shuayamusic.Models.RankingModels.RankingMusic;
-import com.shuaya.rodchongstudio.shuayamusic.Models.SingerBean;
+import com.shuaya.rodchongstudio.shuayamusic.models.Music;
 import com.shuaya.rodchongstudio.shuayamusic.R;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-import Utils.HttpUtil;
-import Utils.MusicPlayer.MusicPlayer;
-import Utils.MusicPlayer.ReceiveMusic;
+import utils.HttpUtil;
+import utils.musicplayer.MusicPlayer;
+import utils.musicplayer.ReceiveMusic;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;

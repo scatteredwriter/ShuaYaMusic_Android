@@ -1,4 +1,4 @@
-package com.shuaya.rodchongstudio.shuayamusic.Widget;
+package com.shuaya.rodchongstudio.shuayamusic.widget;
 
 /**
  * Created by RodChong on 2016/12/27.
@@ -6,7 +6,6 @@ package com.shuaya.rodchongstudio.shuayamusic.Widget;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.Bitmap.Config;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff.Mode;

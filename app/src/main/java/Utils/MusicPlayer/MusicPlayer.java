@@ -1,17 +1,15 @@
-package Utils.MusicPlayer;
+package utils.musicplayer;
 
 /**
  * Created by RodChong on 2016/12/27.
  */
 
-import Utils.Application;
+import utils.Application;
 
-import android.content.Context;
 import android.media.MediaPlayer;
-import android.media.MediaPlayer.OnPreparedListener;
 import android.os.Handler;
 
-import com.shuaya.rodchongstudio.shuayamusic.Models.Music;
+import com.shuaya.rodchongstudio.shuayamusic.models.Music;
 import com.shuaya.rodchongstudio.shuayamusic.R;
 
 import java.util.ArrayList;

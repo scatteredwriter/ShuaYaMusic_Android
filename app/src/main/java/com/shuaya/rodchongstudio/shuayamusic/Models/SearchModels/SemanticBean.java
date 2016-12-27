@@ -1,4 +1,4 @@
-package com.shuaya.rodchongstudio.shuayamusic.Models.SearchModels;
+package com.shuaya.rodchongstudio.shuayamusic.models.SearchModels;
 
 import java.util.List;
 

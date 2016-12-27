@@ -1,16 +1,10 @@
-package Utils;
+package utils;
 
 import android.util.Log;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.Response;
 
 /**
  * Created by RodChong on 2016/12/20.

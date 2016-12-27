@@ -33,7 +33,7 @@
                 android:layout_alignParentTop="true"
                 android:progressDrawable="@drawable/current_progress" />
 
-            <com.shuaya.rodchongstudio.shuayamusic.Widget.RoundImageView
+            <com.shuaya.rodchongstudio.shuayamusic.widget.RoundImageView
                 android:id="@+id/current_music_img"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
