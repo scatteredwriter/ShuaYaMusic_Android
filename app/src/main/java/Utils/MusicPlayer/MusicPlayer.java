@@ -23,6 +23,7 @@ public class MusicPlayer {
     public static MusicPlayer Instance = new MusicPlayer();
     private Music current_music;
     private MediaPlayer mediaPlayer;
+    private PlayState playState;
     private List<ReceiveMusic> receiveMusics;
 
     final Handler handler = new Handler();
@@ -33,17 +34,23 @@ public class MusicPlayer {
             Iterator localIterator = MusicPlayer.this.receiveMusics.iterator();
             while (localIterator.hasNext())
                 ((ReceiveMusic) localIterator.next()).ProgressChanged(MusicPlayer.this.mediaPlayer.getCurrentPosition());
-            MusicPlayer.this.handler.postDelayed(this, 1000L);
+            handler.postDelayed(this, 1000L);
         }
     };
 
     public MusicPlayer() {
         mediaPlayer = new MediaPlayer();
         receiveMusics = new ArrayList();
+        playState = PlayState.NOSTATR;
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
             @Override
             public void onCompletion(MediaPlayer mp) {
                 mp.reset();
+                playState = PlayState.COMPLETED;
+                handler.removeCallbacks(runnable);
+                Iterator localIterator = receiveMusics.iterator();
+                while (localIterator.hasNext())
+                    ((ReceiveMusic) localIterator.next()).PlayingCompleted();
             }
         });
     }
@@ -58,6 +65,7 @@ public class MusicPlayer {
                 public void onPrepared(MediaPlayer paramAnonymousMediaPlayer) {
                     paramAnonymousMediaPlayer.start();
                     current_music = music;
+                    playState = PlayState.PLAYING;
                     NotifyMusicChanged();
                     NotifyProgressChanged();
                 }
@@ -74,10 +82,10 @@ public class MusicPlayer {
     }
 
     private void NotifyProgressChanged() {
-        this.handler.postDelayed(this.runnable, 1000L);
+        handler.postDelayed(this.runnable, 1000L);
     }
 
-    private void NotifyPlayingCompleted(){
+    private void NotifyPlayingCompleted() {
         Iterator localIterator = this.receiveMusics.iterator();
         while (localIterator.hasNext())
             ((ReceiveMusic) localIterator.next()).GetMusic(this.current_music, this.mediaPlayer.getDuration());
@@ -91,9 +99,14 @@ public class MusicPlayer {
         return this.current_music;
     }
 
+    public PlayState GetCurrentPlayState() {
+        return this.playState;
+    }
+
     public boolean Pause() {
         if (this.mediaPlayer.isPlaying()) {
             this.mediaPlayer.pause();
+            playState = PlayState.PAUSE;
             return true;
         }
         return false;
@@ -102,6 +115,7 @@ public class MusicPlayer {
     public boolean Start() {
         if (!this.mediaPlayer.isPlaying()) {
             this.mediaPlayer.start();
+            playState = PlayState.PLAYING;
             return true;
         }
         return false;

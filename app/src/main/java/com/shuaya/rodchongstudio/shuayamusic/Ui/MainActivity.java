@@ -109,10 +109,15 @@ public class MainActivity extends BaseActivity implements ReceiveMusic {
         ((ProgressBar) findViewById(R.id.current_music_progress)).setProgress(position);
     }
 
-    @Override
     public void PlayingCompleted() {
         ImageView pause_but = (ImageView) findViewById(R.id.current_music_pause_but);
         pause_but.setImageResource(R.mipmap.ic_play_circle_filled_black_48dp);
+    }
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(true);
+        super.onBackPressed();
     }
 
     public class OnPuaseClick implements View.OnClickListener {
@@ -124,10 +129,18 @@ public class MainActivity extends BaseActivity implements ReceiveMusic {
         }
 
         public void onClick(View paramView) {
-            if (MusicPlayer.Instance.Pause())
-                this.imageView.setImageResource(R.mipmap.ic_play_circle_filled_black_48dp);
-            else if (MusicPlayer.Instance.Start())
-                this.imageView.setImageResource(R.mipmap.ic_pause_circle_filled_black_48dp);
+            switch (MusicPlayer.Instance.GetCurrentPlayState()) {
+                case PLAYING:
+                    if (MusicPlayer.Instance.Pause())
+                        this.imageView.setImageResource(R.mipmap.ic_play_circle_filled_black_48dp);
+                    break;
+                case PAUSE:
+                    if (MusicPlayer.Instance.Start())
+                        this.imageView.setImageResource(R.mipmap.ic_pause_circle_filled_black_48dp);
+                    break;
+                case NOSTATR:
+                case COMPLETED:
+            }
         }
     }
 
