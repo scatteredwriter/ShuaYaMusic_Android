@@ -11,6 +11,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -99,7 +100,7 @@ public class MainActivity extends BaseActivity implements ReceiveMusic {
             }
         });
         music_songname.setText(music.getSongname());
-        muusic_singername.setText(((SingerBean) music.getSinger().get(0)).getName());
+        muusic_singername.setText((music.getSinger().get(0)).getName());
         music_progress.setMax(duration);
         pause_but.setImageResource(R.mipmap.ic_pause_circle_filled_black_48dp);
         pause_but.setOnClickListener(new OnPuaseClick(pause_but));
@@ -115,8 +116,18 @@ public class MainActivity extends BaseActivity implements ReceiveMusic {
     }
 
     @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            moveTaskToBack(false);
+            return true;
+        }
+
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
     public void onBackPressed() {
-        moveTaskToBack(true);
+        moveTaskToBack(false);
         super.onBackPressed();
     }
 
