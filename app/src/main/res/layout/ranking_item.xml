@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="10dp">
+
+    <FrameLayout
+        android:id="@+id/ranking_number_layout"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:id="@+id/ranking_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="16sp" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/ranking_menu_but"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:src="@mipmap/ic_more_horiz_black_48dp"
+        android:alpha="0.4"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+    <LinearLayout
+        android:id="@+id/ranking_songname_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/ranking_number_layout"
+        android:layout_toLeftOf="@id/ranking_menu_but"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/ranking_songname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:ellipsize="end"
+            android:foreground="@color/black_color"
+            android:maxLines="1"
+            android:maxWidth="140dp"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/ranking_isonly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/retangle_shape"
+            android:text="独家"
+            android:textColor="@color/app_theme"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/ranking_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/retangle_shape"
+            android:text="刷呀免费"
+            android:textColor="@color/app_theme"
+            android:textSize="10sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/ranking_singername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ranking_songname_layout"
+        android:layout_toRightOf="@id/ranking_number_layout"
+        android:textColor="@color/second_color"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/ranking_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ranking_songname_layout"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@id/ranking_singername"
+        android:text="-"
+        android:textColor="@color/second_color"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/ranking_ablumname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ranking_songname_layout"
+        android:layout_toRightOf="@id/ranking_"
+        android:layout_toLeftOf="@id/ranking_menu_but"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/second_color"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/ranking_singername"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/ranking_number_layout"
+        android:background="@color/divider_color" />
+
+</RelativeLayout>

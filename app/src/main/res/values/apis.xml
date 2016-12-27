@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="search_api">http://i.y.qq.com/s.music/fcgi-bin/search_for_qq_cp?g_tk=5381&amp;uin=0&amp;format=jsonp&amp;inCharset=GB2312&amp;outCharset=utf-8&amp;notice=0&amp;platform=h5&amp;needNewCode=1&amp;w={0}&amp;zhidaqu=1&amp;catZhida=1&amp;t=0&amp;flag=1&amp;ie=utf-8&amp;sem=1&amp;aggr=0&amp;perpage=20&amp;n=20&amp;p={1}&amp;remoteplace=txt.mqq.all</string>
+    <string name="rankings_api">http://i.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg?tpl=20&amp;page=detail&amp;type=top&amp;topid={0}&amp;g_tk=5381&amp;loginUin=0&amp;hostUin=0&amp;format=json&amp;inCharset=GB2312&amp;outCharset=utf-8&amp;notice=0&amp;platform=yqq</string>
+    <string name="new_albums_api">http://c.y.qq.com/v8/fcg-bin/album_library?g_tk=5381&amp;jsonpCallback=GetAlbumListJsonCallback&amp;loginUin=0&amp;hostUin=0&amp;format=jsonp&amp;inCharset=GB2312&amp;outCharset=GB2312&amp;notice=0&amp;platform=yqq&amp;needNewCode=0&amp;cmd=get_album_info&amp;page=0&amp;pagesize=50&amp;sort={0}&amp;language=-1&amp;genre=0&amp;year=1&amp;pay=0&amp;type=-1&amp;company=-1</string>
+    <string name="album_image_api">http://i.gtimg.cn/music/photo/mid_album_{0}/{1}/{2}/{3}.jpg</string>
+
+    <string name="music_online_api">http://ws.stream.qqmusic.qq.com/C100{0}.m4a?fromtag=38</string>
+</resources>

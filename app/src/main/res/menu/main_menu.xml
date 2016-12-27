@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/main_menu_musicwall"
+            android:icon="@mipmap/ic_view_list_black_36dp"
+            android:title="@string/main_menu_musicwall" />
+
+        <item
+            android:id="@+id/main_menu_search"
+            android:icon="@mipmap/ic_search_black_36dp"
+            android:title="@string/main_menu_search" />
+
+        <item
+            android:id="@+id/main_menu_setting"
+            android:icon="@mipmap/ic_settings_black_36dp"
+            android:title="@string/main_menu_setting" />
+
+    </group>
+
+</menu>

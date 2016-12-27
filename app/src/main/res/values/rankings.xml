@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="rankings_list">
+        <item>流行</item>
+        <item>新歌</item>>
+        <item>热门</item>
+        <item>内地</item>
+        <item>港台</item>
+        <item>欧美</item>
+        <item>韩国</item>
+        <item>日本</item>
+        <item>音乐人</item>
+        <item>Billboard</item>
+    </array>
+
+</resources>

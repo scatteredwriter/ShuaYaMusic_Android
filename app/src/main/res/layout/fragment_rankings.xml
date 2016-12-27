@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="55dp"
+    tools:context="com.shuaya.rodchongstudio.shuayamusic.Ui.RankingsFragment">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/rankings_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#FFFFFF"
+        app:tabIndicatorColor="@color/app_theme"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/app_theme"
+        app:tabTextColor="@color/second_app_theme" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/rankings_viewpager"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#FFFFFF" />
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ShuaYaMusic</string>
+    <string name="rankings_name">榜单</string>
+    <string name="albums_anme">专辑</string>
+    <string name="pop_id">4</string>
+    <string name="hot_id">26</string>
+    <string name="new_id">27</string>
+    <string name="mainland_id">5</string>
+    <string name="tw_id">6</string>
+    <string name="usa_id">3</string>
+    <string name="kr_id">16</string>
+    <string name="jp_id">17</string>
+    <string name="musician_id">32</string>
+    <string name="billboard_id">108</string>
+    <string name="main_menu_musicwall">音乐墙</string>
+    <string name="main_menu_search">搜索</string>
+    <string name="main_menu_setting">设置</string>
+</resources>
