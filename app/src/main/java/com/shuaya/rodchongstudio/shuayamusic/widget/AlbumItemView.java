@@ -1,4 +1,4 @@
-package utils;
+package com.shuaya.rodchongstudio.shuayamusic.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;

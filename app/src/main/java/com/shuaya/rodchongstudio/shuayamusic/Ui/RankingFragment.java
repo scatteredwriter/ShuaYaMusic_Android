@@ -91,16 +91,14 @@ public class RankingFragment extends Fragment {
         return view;
     }
 
-    private void InitListView(int mId, List<RankingMusic> rankingMusics, final RankingsAdapter rankingAdapter) {
+    private void InitListView(int mId, final List<RankingMusic> rankingMusics, final RankingsAdapter rankingAdapter) {
         switch (mId) {
             case R.string.pop_id:
                 Pop_lists = rankingMusics;
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        for (RankingMusic item : Pop_lists) {
-                            rankingAdapter.add(item);
-                        }
+                        rankingAdapter.addAll(Pop_lists);
                     }
                 });
                 break;
@@ -109,9 +107,7 @@ public class RankingFragment extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        for (RankingMusic item : New_lists) {
-                            rankingAdapter.add(item);
-                        }
+                        rankingAdapter.addAll(New_lists);
                     }
                 });
                 break;
@@ -120,9 +116,7 @@ public class RankingFragment extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        for (RankingMusic item : Hot_lists) {
-                            rankingAdapter.add(item);
-                        }
+                        rankingAdapter.addAll(Hot_lists);
                     }
                 });
                 break;
@@ -131,9 +125,7 @@ public class RankingFragment extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        for (RankingMusic item : Mainland_lists) {
-                            rankingAdapter.add(item);
-                        }
+                        rankingAdapter.addAll(Mainland_lists);
                     }
                 });
                 break;
@@ -142,9 +134,7 @@ public class RankingFragment extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        for (RankingMusic item : Tw_lists) {
-                            rankingAdapter.add(item);
-                        }
+                        rankingAdapter.addAll(Tw_lists);
                     }
                 });
                 break;
@@ -153,9 +143,7 @@ public class RankingFragment extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        for (RankingMusic item : Usa_lists) {
-                            rankingAdapter.add(item);
-                        }
+                        rankingAdapter.addAll(Usa_lists);
                     }
                 });
                 break;
@@ -164,9 +152,7 @@ public class RankingFragment extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        for (RankingMusic item : Kr_lists) {
-                            rankingAdapter.add(item);
-                        }
+                        rankingAdapter.addAll(Kr_lists);
                     }
                 });
                 break;
@@ -175,9 +161,7 @@ public class RankingFragment extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        for (RankingMusic item : Jp_lists) {
-                            rankingAdapter.add(item);
-                        }
+                        rankingAdapter.addAll(Jp_lists);
                     }
                 });
                 break;
@@ -186,9 +170,7 @@ public class RankingFragment extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        for (RankingMusic item : Musician_lists) {
-                            rankingAdapter.add(item);
-                        }
+                        rankingAdapter.addAll(Musician_lists);
                     }
                 });
                 break;
@@ -197,9 +179,7 @@ public class RankingFragment extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        for (RankingMusic item : Billboard_lists) {
-                            rankingAdapter.add(item);
-                        }
+                        rankingAdapter.addAll(Billboard_lists);
                     }
                 });
                 break;
@@ -211,6 +191,7 @@ public class RankingFragment extends Fragment {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             RankingMusic music = (RankingMusic) parent.getAdapter().getItem(position);
+            music.getData().setSongname(music.getData().getSongorig());
             MusicPlayer.Instance.StartPlaying(music.getData());
         }
     }

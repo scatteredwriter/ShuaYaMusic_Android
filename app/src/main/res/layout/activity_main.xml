@@ -3,26 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:layout_height="match_parent">
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
-
-        <FrameLayout
-            android:id="@+id/main_framelayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:fitsSystemWindows="true" />
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:id="@+id/current_music"
             android:layout_width="match_parent"
             android:layout_height="55dp"
-            android:layout_gravity="bottom"
+            android:layout_alignParentBottom="true"
             android:background="@color/board_background_color">
 
             <ProgressBar
@@ -83,7 +74,13 @@
 
         </RelativeLayout>
 
-    </FrameLayout>
+        <FrameLayout
+            android:id="@+id/main_framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/current_music" />
+
+    </RelativeLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/main_navigationview"

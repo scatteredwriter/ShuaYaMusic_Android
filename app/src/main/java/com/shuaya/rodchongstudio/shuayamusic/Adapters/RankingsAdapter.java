@@ -86,6 +86,7 @@ public class RankingsAdapter extends ArrayAdapter<RankingMusic> {
             TextView pop_menu_item = (TextView) view.findViewById(R.id.pop_menu_text);
             String text = pop_menu_item.getText().toString();
             if (text.equals(Application.getContext().getResources().getStringArray(R.array.listview_menus)[0])) {
+                music.getData().setSongname(music.getData().getSongorig());
                 MusicPlayer.Instance.StartPlaying(music.getData());
             } else if (text.equals(Application.getContext().getResources().getStringArray(R.array.listview_menus)[1])) {
 

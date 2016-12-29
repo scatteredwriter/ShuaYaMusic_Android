@@ -13,7 +13,7 @@ public class SongBean {
     private int curnum;
     private int curpage;
     private int totalnum;
-    private List<Music> list;
+    private List<SearchMusic> list;
 
     public int getCurnum() {
         return curnum;
@@ -39,11 +39,11 @@ public class SongBean {
         this.totalnum = totalnum;
     }
 
-    public List<Music> getList() {
+    public List<SearchMusic> getList() {
         return list;
     }
 
-    public void setList(List<Music> list) {
+    public void setList(List<SearchMusic> list) {
         this.list = list;
     }
 }

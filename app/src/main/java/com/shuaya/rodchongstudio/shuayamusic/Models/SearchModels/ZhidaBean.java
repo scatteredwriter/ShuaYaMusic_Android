@@ -20,6 +20,15 @@ public class ZhidaBean {
     private String singername;
     private int songnum;
     private int type;
+    /**
+     * albumid : 1578539
+     * albummid : 003RxTdZ0sJLwo
+     * albumname : 微微一笑很倾城 电视剧原声带
+     */
+
+    private int albumid;
+    private String albummid;
+    private String albumname;
 
     public int getAlbumnum() {
         return albumnum;
@@ -67,5 +76,29 @@ public class ZhidaBean {
 
     public void setType(int type) {
         this.type = type;
+    }
+
+    public int getAlbumid() {
+        return albumid;
+    }
+
+    public void setAlbumid(int albumid) {
+        this.albumid = albumid;
+    }
+
+    public String getAlbummid() {
+        return albummid;
+    }
+
+    public void setAlbummid(String albummid) {
+        this.albummid = albummid;
+    }
+
+    public String getAlbumname() {
+        return albumname;
+    }
+
+    public void setAlbumname(String albumname) {
+        this.albumname = albumname;
     }
 }

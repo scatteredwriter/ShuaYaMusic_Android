@@ -105,6 +105,7 @@ public class MusicPlayer {
         if (this.mediaPlayer.isPlaying()) {
             this.mediaPlayer.pause();
             playState = PlayState.PAUSE;
+            handler.removeCallbacks(runnable);
             return true;
         }
         return false;
@@ -114,6 +115,7 @@ public class MusicPlayer {
         if (!this.mediaPlayer.isPlaying()) {
             this.mediaPlayer.start();
             playState = PlayState.PLAYING;
+            handler.postDelayed(runnable, 1000L);
             return true;
         }
         return false;

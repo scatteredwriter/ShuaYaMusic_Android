@@ -33,6 +33,9 @@ import okhttp3.Response;
 public class MainActivity extends BaseActivity implements ReceiveMusic {
 
     private static DrawerLayout drawerLayout;
+    private MusicWallFragment musicWallFragment;
+    private SearchFragment searchFragment;
+    private Fragment current_fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +43,8 @@ public class MainActivity extends BaseActivity implements ReceiveMusic {
         setContentView(R.layout.activity_main);
         MusicPlayer.Instance.AddMusicChangedListener(this);
         drawerLayout = (DrawerLayout) findViewById(R.id.activity_main);
-        Fragment music_wall_fragment = new MusicWallFragment();
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.activity_main, music_wall_fragment);
-        transaction.commit();
         InitMenu();
+        ChangedFragment(MusicWallFragment.class);
     }
 
     public static void openMenu() {
@@ -54,16 +54,60 @@ public class MainActivity extends BaseActivity implements ReceiveMusic {
     }
 
     private void InitMenu() {
-        NavigationView navigationView = (NavigationView) findViewById(R.id.main_navigationview);
+        NavigationView navigationView = (NavigationView) drawerLayout.findViewById(R.id.main_navigationview);
         Menu menu = navigationView.getMenu();
         MenuItem item = menu.findItem(R.id.main_menu_musicwall);
         item.setChecked(true);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                return false;
+                switch (item.getItemId()) {
+                    case R.id.main_menu_musicwall:
+                        ChangedFragment(MusicWallFragment.class);
+                        break;
+                    case R.id.main_menu_search:
+                        ChangedFragment(SearchFragment.class);
+                        break;
+                    case R.id.main_menu_setting:
+                        return false;
+                }
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
             }
         });
+        navigationView.findFocus();
+    }
+
+    private void ChangedFragment(Class<?> fragment_class) {
+        if (current_fragment == null) { //初始化
+            musicWallFragment = new MusicWallFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.add(R.id.main_framelayout, musicWallFragment);
+            current_fragment = musicWallFragment;
+            transaction.commit();
+        } else if (current_fragment.getClass() != MusicWallFragment.class) { //不从音乐墙到别的Fragment
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.remove(current_fragment);
+            if (fragment_class == SearchFragment.class) {
+                searchFragment = new SearchFragment();
+                transaction.add(R.id.main_framelayout, searchFragment);
+                current_fragment = searchFragment;
+            } else if (fragment_class == MusicWallFragment.class) {
+                transaction.show(musicWallFragment);
+                current_fragment = musicWallFragment;
+            }
+            transaction.commit();
+        } else if (current_fragment.getClass() == MusicWallFragment.class) { //从音乐墙到别的Fragment
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            if (fragment_class == SearchFragment.class) {
+                searchFragment = new SearchFragment();
+                transaction.hide(current_fragment);
+                transaction.add(R.id.main_framelayout, searchFragment);
+                current_fragment = searchFragment;
+                transaction.commit();
+
+            }
+        }
     }
 
     public void GetMusic(Music music, int duration) {

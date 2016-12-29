@@ -2,57 +2,72 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="10dp"
     android:paddingTop="10dp">
+
+    <ImageView
+        android:id="@+id/search_menu_but"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:alpha="0.4"
+        android:src="@mipmap/ic_more_horiz_black_48dp" />
 
     <TextView
         android:id="@+id/search_songname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:foreground="@color/main_color"
-        android:textSize="15dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="10dp" />
+        android:layout_toLeftOf="@id/search_menu_but"
+        android:ellipsize="end"
+        android:foreground="@color/main_color"
+        android:maxLines="1"
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/search_singername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/second_color"
-        android:textSize="12dp"
-        android:layout_below="@id/search_songname"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="10dp"/>
+        android:layout_below="@id/search_songname"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/second_color"
+        android:textSize="12dp" />
 
     <TextView
         android:id="@+id/search_"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/second_color"
-        android:textSize="12dp"
-        android:text="-"
-        android:layout_toRightOf="@id/search_singername"
         android:layout_below="@id/search_songname"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"/>
+        android:layout_marginRight="5dp"
+        android:layout_toRightOf="@id/search_singername"
+        android:text="-"
+        android:textColor="@color/second_color"
+        android:textSize="12dp" />
 
     <TextView
         android:id="@+id/search_ablumname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/second_color"
-        android:textSize="12dp"
-        android:layout_toRightOf="@id/search_"
         android:layout_below="@id/search_songname"
-        />
-
+        android:layout_toLeftOf="@id/search_menu_but"
+        android:layout_toRightOf="@id/search_"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textColor="@color/second_color"
+        android:textSize="12dp" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/divider_color"
-        android:layout_marginLeft="10dp"
         android:layout_below="@id/search_singername"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:background="@color/divider_color" />
 
 </RelativeLayout>

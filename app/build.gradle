@@ -6,8 +6,7 @@ android {
     defaultConfig {
         applicationId "com.shuaya.rodchongstudio.shuayamusic"
         minSdkVersion 14
-        versionCode 1
-        versionName "1.0"
+        versionName '1.1'
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -31,6 +30,5 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'info.hoang8f:android-segmented:1.0.6'
     compile 'com.android.support:support-v4:25.1.0'
-    compile 'com.google.android.gms:play-services-appindexing:9.8.0'
     testCompile 'junit:junit:4.12'
 }

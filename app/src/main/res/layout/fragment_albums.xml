@@ -2,15 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.shuaya.rodchongstudio.shuayamusic.ui.AlbumsFragment"
-    android:layout_marginBottom="55dp">
+    tools:context="com.shuaya.rodchongstudio.shuayamusic.ui.AlbumsFragment">
 
     <GridView
         android:id="@+id/albums_gridview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:numColumns="2"
         android:horizontalSpacing="0dp"
-        android:verticalSpacing="0dp"/>
+        android:numColumns="2"
+        android:verticalSpacing="0dp" />
 
 </FrameLayout>
