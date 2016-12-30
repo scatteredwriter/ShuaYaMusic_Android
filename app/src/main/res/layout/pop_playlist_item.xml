@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="15dp"
+        android:background="@color/divider_color" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/pop_playlist_delete_but"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:alpha="0.3"
+            android:src="@mipmap/ic_clear_black_48dp" />
+
+        <TextView
+            android:id="@+id/pop_playlist_songname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:maxWidth="200dp"
+            android:textColor="@color/black_color"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/pop_playlist_"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/pop_playlist_songname"
+            android:text="-"
+            android:textColor="@color/second_color" />
+
+        <TextView
+            android:id="@+id/pop_playlist_singername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/pop_playlist_delete_but"
+            android:layout_toRightOf="@id/pop_playlist_"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/second_color"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+</FrameLayout>

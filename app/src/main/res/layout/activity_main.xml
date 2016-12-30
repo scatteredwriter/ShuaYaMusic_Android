@@ -14,7 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_alignParentBottom="true"
-            android:background="@color/board_background_color">
+            android:background="@drawable/current_board_selector"
+            android:contextClickable="true">
 
             <ProgressBar
                 android:id="@+id/current_music_progress"
@@ -31,8 +32,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:background="@drawable/circle_shape" />
+                android:layout_marginRight="10dp" />
 
             <ImageView
                 android:id="@+id/current_music_pause_but"
@@ -40,9 +40,19 @@
                 android:layout_height="45dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:alpha="0.3" />
+                android:alpha="0.3"
+                android:src="@mipmap/ic_play_circle_filled_black_48dp" />
+
+            <ImageView
+                android:id="@+id/current_music_playlist_but"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@id/current_music_pause_but"
+                android:alpha="0.3"
+                android:src="@mipmap/ic_queue_music_black_48dp" />
 
             <LinearLayout
                 android:id="@+id/current_music_info"
@@ -87,8 +97,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"
         app:headerLayout="@layout/main_menu_header"
+        app:itemIconTint="@color/app_theme"
+        app:itemTextColor="@color/app_theme"
         app:menu="@menu/main_menu" />
 
 </android.support.v4.widget.DrawerLayout>

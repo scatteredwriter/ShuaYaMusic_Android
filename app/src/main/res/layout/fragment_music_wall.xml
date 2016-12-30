@@ -9,7 +9,7 @@
         android:id="@+id/music_wall_toolbar"
         android:layout_width="match_parent"
         android:layout_height="76dp"
-        android:background="?attr/colorPrimary"
+        android:background="@color/app_theme"
         android:paddingTop="20dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:buttonGravity="bottom"
@@ -27,7 +27,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="15dp"
-                android:src="@mipmap/ic_menu_white_24dp" />
+                android:src="@mipmap/ic_menu_white_48dp" />
 
             <info.hoang8f.android.segmented.SegmentedGroup
                 android:id="@+id/music_wall_segmented"

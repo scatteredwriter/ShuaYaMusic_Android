@@ -10,17 +10,18 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.shuaya.rodchongstudio.shuayamusic.models.Music;
 import com.shuaya.rodchongstudio.shuayamusic.R;
-import com.shuaya.rodchongstudio.shuayamusic.models.RankingModels.RankingMusic;
 import com.shuaya.rodchongstudio.shuayamusic.models.SearchModels.SearchMusic;
+import com.shuaya.rodchongstudio.shuayamusic.services.MusicService;
+import com.shuaya.rodchongstudio.shuayamusic.ui.BaseActivity;
 import com.shuaya.rodchongstudio.shuayamusic.widget.PopupMenu;
 
 import java.util.List;
 
 import utils.Application;
-import utils.musicplayer.MusicPlayer;
+import utils.DatabaseHelper;
 
 /**
  * Created by RodChong on 2016/12/19.
@@ -69,15 +70,19 @@ public class SearchAdapter extends ArrayAdapter<SearchMusic> {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             TextView pop_menu_item = (TextView) view.findViewById(R.id.pop_menu_text);
             String text = pop_menu_item.getText().toString();
-            if (text.equals(Application.getContext().getResources().getStringArray(R.array.listview_menus)[0])) {
-                MusicPlayer.Instance.StartPlaying(music);
-            } else if (text.equals(Application.getContext().getResources().getStringArray(R.array.listview_menus)[1])) {
+            if (text.equals(Application.getContext().getResources().getStringArray(R.array.listview_menus)[0])) { //播放
+                DatabaseHelper.AddMusicItem(music);
+                ((MusicService.MusicServiceBinder) ((BaseActivity) getContext()).GetBinder()).StartPlaying(music);
+            } else if (text.equals(Application.getContext().getResources().getStringArray(R.array.listview_menus)[1])) { //喜欢
 
-            } else if (text.equals(Application.getContext().getResources().getStringArray(R.array.listview_menus)[2])) {
+            } else if (text.equals(Application.getContext().getResources().getStringArray(R.array.listview_menus)[2])) { //添加到播放列表
+                DatabaseHelper.AddMusicItem(music);
+                Toast.makeText(getContext(), "添加成功", Toast.LENGTH_SHORT).show();
+            } else if (text.contains(Application.getContext().getResources().getStringArray(R.array.listview_menus)[3])) { //下载
 
-            } else if (text.contains(Application.getContext().getResources().getStringArray(R.array.listview_menus)[3])) {
+            } else if (text.contains(Application.getContext().getResources().getStringArray(R.array.listview_menus)[4])) { //歌手详情
 
-            } else if (text.contains(Application.getContext().getResources().getStringArray(R.array.listview_menus)[4])) {
+            } else if (text.contains(Application.getContext().getResources().getStringArray(R.array.listview_menus)[5])) { //专辑详情
 
             }
             popupMenu.dismiss();

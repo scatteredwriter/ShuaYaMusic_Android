@@ -10,7 +10,7 @@
         android:id="@+id/search_toolbar"
         android:layout_width="match_parent"
         android:layout_height="76dp"
-        android:background="?attr/colorPrimary"
+        android:background="@color/app_theme"
         android:paddingTop="20dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:buttonGravity="bottom"
@@ -28,14 +28,14 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="15dp"
-                android:src="@mipmap/ic_menu_white_24dp" />
+                android:src="@mipmap/ic_menu_white_48dp" />
 
             <android.support.v7.widget.SearchView
                 android:id="@+id/search_searchview"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_centerInParent="true"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="5dp"
                 android:layout_toRightOf="@id/search_menu"
                 app:iconifiedByDefault="false"
                 app:queryHint="搜索歌曲、歌手、专辑：" />

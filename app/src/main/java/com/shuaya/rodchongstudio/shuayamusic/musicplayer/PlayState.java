@@ -1,4 +1,4 @@
-package utils.musicplayer;
+package com.shuaya.rodchongstudio.shuayamusic.musicplayer;
 
 /**
  * Created by RodChong on 2016/12/27.

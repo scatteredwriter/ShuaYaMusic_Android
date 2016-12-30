@@ -8,7 +8,6 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,26 +21,22 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.shuaya.rodchongstudio.shuayamusic.R;
 import com.shuaya.rodchongstudio.shuayamusic.adapters.SearchAdapter;
-import com.shuaya.rodchongstudio.shuayamusic.models.Music;
-import com.shuaya.rodchongstudio.shuayamusic.models.RankingModels.RankingMusic;
 import com.shuaya.rodchongstudio.shuayamusic.models.SearchModels.SearchBean;
 import com.shuaya.rodchongstudio.shuayamusic.models.SearchModels.SearchMusic;
 import com.shuaya.rodchongstudio.shuayamusic.models.SearchModels.ZhidaBean;
-
-import org.w3c.dom.Text;
+import com.shuaya.rodchongstudio.shuayamusic.services.MusicService;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.SQLXML;
 import java.util.ArrayList;
 
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 import utils.Application;
+import utils.DatabaseHelper;
 import utils.HttpUtil;
 import utils.UnicodeEncoder;
-import utils.musicplayer.MusicPlayer;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -337,7 +332,8 @@ public class SearchFragment extends Fragment {
             if (listview.getHeaderViewsCount() != 0 && position == 0) {
             } else {
                 SearchMusic music = (SearchMusic) parent.getAdapter().getItem(position);
-                MusicPlayer.Instance.StartPlaying(music);
+                DatabaseHelper.AddMusicItem(music);
+                ((MusicService.MusicServiceBinder) ((BaseActivity) getActivity()).GetBinder()).StartPlaying(music);
             }
         }
     }

@@ -2,8 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.shuaya.rodchongstudio.shuayamusic">
 
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="21" />
+
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="21"/>
+
+    <android:uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <android:uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:name="utils.Application"
@@ -22,6 +29,15 @@
             </intent-filter>
         </activity>
 
+        <service
+            android:name=".services.MusicService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".ui.PlayActivity"
+            android:label="@string/title_activity_play"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

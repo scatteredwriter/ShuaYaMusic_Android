@@ -13,13 +13,14 @@ import com.shuaya.rodchongstudio.shuayamusic.adapters.RankingsAdapter;
 import com.shuaya.rodchongstudio.shuayamusic.models.RankingModels.RankingBean;
 import com.shuaya.rodchongstudio.shuayamusic.models.RankingModels.RankingMusic;
 import com.shuaya.rodchongstudio.shuayamusic.R;
+import com.shuaya.rodchongstudio.shuayamusic.services.MusicService;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import utils.DatabaseHelper;
 import utils.HttpUtil;
-import utils.musicplayer.MusicPlayer;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
@@ -59,8 +60,7 @@ public class RankingFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_ranking, container, false);
         String id = getString(mId);
         String api = getString(R.string.rankings_api);
@@ -192,7 +192,8 @@ public class RankingFragment extends Fragment {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             RankingMusic music = (RankingMusic) parent.getAdapter().getItem(position);
             music.getData().setSongname(music.getData().getSongorig());
-            MusicPlayer.Instance.StartPlaying(music.getData());
+            DatabaseHelper.AddMusicItem(music.getData());
+            ((MusicService.MusicServiceBinder) ((BaseActivity) getActivity()).GetBinder()).StartPlaying(music.getData());
         }
     }
 

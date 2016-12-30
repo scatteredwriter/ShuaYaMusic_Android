@@ -6,7 +6,9 @@ package utils;
 
 import android.content.Context;
 
-public class Application extends android.app.Application {
+import org.litepal.LitePalApplication;
+
+public class Application extends LitePalApplication {
     private static Context context;
 
     public static Context getContext() {

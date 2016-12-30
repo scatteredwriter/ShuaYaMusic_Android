@@ -3,6 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_gravity="top"
+        android:layout_marginLeft="15dp"
+        android:background="@color/divider_color" />
+
     <TextView
         android:id="@+id/pop_menu_text"
         android:layout_width="wrap_content"
