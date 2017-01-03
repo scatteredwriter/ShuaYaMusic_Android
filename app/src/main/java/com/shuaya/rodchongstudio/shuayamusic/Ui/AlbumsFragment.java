@@ -10,8 +10,8 @@ import android.widget.GridView;
 
 import com.google.gson.Gson;
 import com.shuaya.rodchongstudio.shuayamusic.adapters.ALbumsAdapter;
-import com.shuaya.rodchongstudio.shuayamusic.models.AlbumModels.Album;
-import com.shuaya.rodchongstudio.shuayamusic.models.AlbumModels.AlbumBean;
+import com.shuaya.rodchongstudio.shuayamusic.models.albummodels.Album;
+import com.shuaya.rodchongstudio.shuayamusic.models.albummodels.AlbumBean;
 import com.shuaya.rodchongstudio.shuayamusic.R;
 
 import java.io.IOException;

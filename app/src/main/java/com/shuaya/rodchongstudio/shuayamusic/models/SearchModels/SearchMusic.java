@@ -1,10 +1,7 @@
-package com.shuaya.rodchongstudio.shuayamusic.models.SearchModels;
+package com.shuaya.rodchongstudio.shuayamusic.models.searchmodels;
 
 import com.google.gson.annotations.SerializedName;
 import com.shuaya.rodchongstudio.shuayamusic.models.Music;
-import com.shuaya.rodchongstudio.shuayamusic.models.PayBean;
-import com.shuaya.rodchongstudio.shuayamusic.models.PreviewBean;
-import com.shuaya.rodchongstudio.shuayamusic.models.SingerBean;
 
 import java.util.List;
 

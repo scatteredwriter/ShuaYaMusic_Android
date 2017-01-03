@@ -1,4 +1,4 @@
-package com.shuaya.rodchongstudio.shuayamusic.models.SearchModels;
+package com.shuaya.rodchongstudio.shuayamusic.models.searchmodels;
 
 /**
  * Created by RodChong on 2016/12/19.

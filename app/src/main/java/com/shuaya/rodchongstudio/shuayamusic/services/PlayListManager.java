@@ -48,6 +48,8 @@ public class PlayListManager {
             int index = 0;
             switch (playMode) {
                 case Shuffle:
+                    if (list.size() == 1)
+                        return list.get(0);
                     for (int i = 0; i < list.size(); i++) {
                         if (current_music.getSongid().equals(list.get(i).getSongid())) {
                             index = random.nextInt(list.size() - 1);
@@ -91,6 +93,8 @@ public class PlayListManager {
             int index = 0;
             switch (playMode) {
                 case Shuffle:
+                    if (list.size() == 1)
+                        return list.get(0);
                     for (int i = 0; i < list.size(); i++) {
                         if (current_music.getSongid().equals(list.get(i).getSongid())) {
                             index = random.nextInt(list.size() - 1);

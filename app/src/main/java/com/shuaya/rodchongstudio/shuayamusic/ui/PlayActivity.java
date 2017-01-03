@@ -9,15 +9,12 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import android.support.v4.view.ViewPager;
+import android.util.Base64;
 import android.view.Gravity;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -25,15 +22,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.shuaya.rodchongstudio.shuayamusic.R;
+import com.shuaya.rodchongstudio.shuayamusic.adapters.PlayActivityPagerAdapter;
 import com.shuaya.rodchongstudio.shuayamusic.models.BaseMusic;
 import com.shuaya.rodchongstudio.shuayamusic.models.Music;
 import com.shuaya.rodchongstudio.shuayamusic.musicplayer.PlayMode;
 import com.shuaya.rodchongstudio.shuayamusic.musicplayer.PlayState;
 import com.shuaya.rodchongstudio.shuayamusic.musicplayer.ReceiveMusic;
 import com.shuaya.rodchongstudio.shuayamusic.services.MusicService;
-import com.shuaya.rodchongstudio.shuayamusic.widget.PauseableRotateAnimator;
 import com.shuaya.rodchongstudio.shuayamusic.widget.PopupMenu;
-import com.shuaya.rodchongstudio.shuayamusic.widget.RoundImageView;
 
 import net.qiujuer.genius.blur.StackBlur;
 
@@ -43,6 +39,7 @@ import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
+import okhttp3.Headers;
 import okhttp3.Response;
 import utils.CastMusicClass;
 import utils.ConvertToDate;
@@ -55,13 +52,13 @@ public class PlayActivity extends BaseActivity implements ReceiveMusic {
     private ServiceConnection connection;
     private Music playing_music;
     private Bitmap album_bitmap;
-    PauseableRotateAnimator animator;
+    private PlayActivityPagerAdapter playActivityPagerAdapter;
     private PopupMenu popupMenu;
 
     private ImageView background_img;
-    private RoundImageView album_img;
     private TextView songname;
     private TextView singername;
+    private ViewPager viewPager;
     private ImageView playmode_but;
     private ImageView previous_but;
     private ImageView pause_but;
@@ -88,6 +85,7 @@ public class PlayActivity extends BaseActivity implements ReceiveMusic {
                 binder = (MusicService.MusicServiceBinder) service;
                 binder.AddMusicChangedListener(PlayActivity.this);
                 setPlaymode_but();
+                setViewPage();
             }
 
             @Override
@@ -134,7 +132,6 @@ public class PlayActivity extends BaseActivity implements ReceiveMusic {
         previous_but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                album_img.clearAnimation();
                 binder.PlayPrevious();
             }
         });
@@ -158,7 +155,6 @@ public class PlayActivity extends BaseActivity implements ReceiveMusic {
         next_but.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                album_img.clearAnimation();
                 binder.PlayNext();
             }
         });
@@ -198,6 +194,12 @@ public class PlayActivity extends BaseActivity implements ReceiveMusic {
         seekBar.setOnSeekBarChangeListener(new OnSeekBarProgressChangedLinstener());
     }
 
+    private void setViewPage() {
+        viewPager = (ViewPager) findViewById(R.id.play_viewpager);
+        playActivityPagerAdapter = new PlayActivityPagerAdapter(getSupportFragmentManager(), this, binder);
+        viewPager.setAdapter(playActivityPagerAdapter);
+    }
+
     private void setBackground() {
         background_img = (ImageView) findViewById(R.id.play_background_img);
         setBackgroundImage(playing_music.getAlbummid());
@@ -222,7 +224,7 @@ public class PlayActivity extends BaseActivity implements ReceiveMusic {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        setAlbumImage();
+/*                        setAlbumImage();*/
                         Bitmap newBitmap = StackBlur.blur(album_bitmap, 20, false);
                         background_img.setImageBitmap(newBitmap);
                         UseAlphaAnimation(background_img);
@@ -230,14 +232,6 @@ public class PlayActivity extends BaseActivity implements ReceiveMusic {
                 });
             }
         });
-    }
-
-    private void setAlbumImage() {
-        album_img = (RoundImageView) findViewById(R.id.play_album_img);
-        album_img.setImageBitmap(album_bitmap);
-        animator = new PauseableRotateAnimator(album_img, 15000L);
-        if (binder.GetCurrentPlayState() == PlayState.PLAYING)
-            animator.Start();
     }
 
     private void setMusicInfo() {
@@ -290,17 +284,14 @@ public class PlayActivity extends BaseActivity implements ReceiveMusic {
     @Override
     public void PlayingCompleted() {
         pause_but.setImageResource(R.mipmap.ic_play_arrow_white_48dp);
-        animator.Stop();
     }
 
     @Override
     public void Paused(int status) {
         if (status == 0) { //暂停
             pause_but.setImageResource(R.mipmap.ic_play_arrow_white_48dp);
-            animator.Pause();
         } else if (status == 1) { //播放
             pause_but.setImageResource(R.mipmap.ic_pause_white_48dp);
-            animator.Start();
         }
     }
 

@@ -1,4 +1,4 @@
-package com.shuaya.rodchongstudio.shuayamusic.models.RankingModels;
+package com.shuaya.rodchongstudio.shuayamusic.models.rankingmodels;
 
 import com.google.gson.annotations.SerializedName;
 import com.shuaya.rodchongstudio.shuayamusic.models.Music;

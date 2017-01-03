@@ -1,0 +1,16 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.shuaya.rodchongstudio.shuayamusic.ui.PlayInfoFragment">
+
+    <com.shuaya.rodchongstudio.shuayamusic.widget.RoundImageView
+        android:id="@+id/play_info_album_img"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        app:BorderColor="#22F5F5F5"
+        app:BorderWidth="10" />
+
+</FrameLayout>

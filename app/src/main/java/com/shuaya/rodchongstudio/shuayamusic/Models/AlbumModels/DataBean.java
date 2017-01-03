@@ -1,4 +1,4 @@
-package com.shuaya.rodchongstudio.shuayamusic.models.AlbumModels;
+package com.shuaya.rodchongstudio.shuayamusic.models.albummodels;
 
 import java.util.List;
 

@@ -61,6 +61,7 @@
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@id/current_music_pause_but"
                 android:layout_toRightOf="@id/current_music_img"
+                android:layout_marginRight="50dp"
                 android:orientation="vertical">
 
                 <TextView

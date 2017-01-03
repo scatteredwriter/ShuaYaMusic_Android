@@ -21,9 +21,9 @@ import android.widget.TextView;
 import com.google.gson.Gson;
 import com.shuaya.rodchongstudio.shuayamusic.R;
 import com.shuaya.rodchongstudio.shuayamusic.adapters.SearchAdapter;
-import com.shuaya.rodchongstudio.shuayamusic.models.SearchModels.SearchBean;
-import com.shuaya.rodchongstudio.shuayamusic.models.SearchModels.SearchMusic;
-import com.shuaya.rodchongstudio.shuayamusic.models.SearchModels.ZhidaBean;
+import com.shuaya.rodchongstudio.shuayamusic.models.searchmodels.SearchBean;
+import com.shuaya.rodchongstudio.shuayamusic.models.searchmodels.SearchMusic;
+import com.shuaya.rodchongstudio.shuayamusic.models.searchmodels.ZhidaBean;
 import com.shuaya.rodchongstudio.shuayamusic.services.MusicService;
 
 import java.io.IOException;

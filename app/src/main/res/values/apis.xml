@@ -6,4 +6,5 @@
     <string name="album_image_api">http://i.gtimg.cn/music/photo/mid_album_{0}/{1}/{2}/{3}.jpg</string>
     <string name="singer_image_api">http://i.gtimg.cn/music/photo/mid_singer_{0}/{1}/{2}/{3}.jpg</string>
     <string name="music_online_api">http://ws.stream.qqmusic.qq.com/C100{0}.m4a?fromtag=38</string>
+    <string name="lyric_api">http://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric_new.fcg?callback=MusicJsonCallback_lrc&amp;songmid={0}&amp;g_tk=5381&amp;jsonpCallback=MusicJsonCallback_lrc&amp;loginUin=0&amp;hostUin=0&amp;format=jsonp&amp;inCharset=utf8&amp;outCharset=utf-8&amp;notice=0&amp;platform=yqq&amp;needNewCode=0</string>
 </resources>

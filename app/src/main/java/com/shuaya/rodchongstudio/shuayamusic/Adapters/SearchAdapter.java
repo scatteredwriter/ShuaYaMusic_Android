@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.shuaya.rodchongstudio.shuayamusic.R;
-import com.shuaya.rodchongstudio.shuayamusic.models.SearchModels.SearchMusic;
+import com.shuaya.rodchongstudio.shuayamusic.models.searchmodels.SearchMusic;
 import com.shuaya.rodchongstudio.shuayamusic.services.MusicService;
 import com.shuaya.rodchongstudio.shuayamusic.ui.BaseActivity;
 import com.shuaya.rodchongstudio.shuayamusic.widget.PopupMenu;

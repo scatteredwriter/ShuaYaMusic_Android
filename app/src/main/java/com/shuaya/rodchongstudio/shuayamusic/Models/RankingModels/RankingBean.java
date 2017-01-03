@@ -1,4 +1,4 @@
-package com.shuaya.rodchongstudio.shuayamusic.models.RankingModels;
+package com.shuaya.rodchongstudio.shuayamusic.models.rankingmodels;
 
 import java.util.List;
 

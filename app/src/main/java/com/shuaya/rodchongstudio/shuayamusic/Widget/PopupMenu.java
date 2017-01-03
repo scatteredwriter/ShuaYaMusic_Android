@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.PopupWindow;
@@ -16,10 +15,9 @@ import android.widget.TextView;
 
 import com.shuaya.rodchongstudio.shuayamusic.adapters.PlaylistAdapter;
 import com.shuaya.rodchongstudio.shuayamusic.models.BaseMusic;
-import com.shuaya.rodchongstudio.shuayamusic.models.Music;
-import com.shuaya.rodchongstudio.shuayamusic.models.RankingModels.RankingMusic;
+import com.shuaya.rodchongstudio.shuayamusic.models.rankingmodels.RankingMusic;
 import com.shuaya.rodchongstudio.shuayamusic.R;
-import com.shuaya.rodchongstudio.shuayamusic.models.SearchModels.SearchMusic;
+import com.shuaya.rodchongstudio.shuayamusic.models.searchmodels.SearchMusic;
 
 import java.util.ArrayList;
 import java.util.HashMap;

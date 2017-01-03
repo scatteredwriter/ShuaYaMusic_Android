@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.shuaya.rodchongstudio.shuayamusic.models.AlbumModels.Album;
+import com.shuaya.rodchongstudio.shuayamusic.models.albummodels.Album;
 import com.shuaya.rodchongstudio.shuayamusic.R;
 
 import java.io.IOException;

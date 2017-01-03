@@ -12,7 +12,6 @@ public class UnicodeEncoder {
     public static String Encoder(String source) {
         String regExp = "&#.*?;";
         Matcher m = Pattern.compile(regExp).matcher(source);
-        StringBuffer sb = new StringBuffer();
         while (m.find()) {
             String group = m.group();
             String code = group.replaceAll("(&#|;)", "");

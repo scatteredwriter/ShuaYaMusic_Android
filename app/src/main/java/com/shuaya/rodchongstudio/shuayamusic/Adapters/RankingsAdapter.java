@@ -1,6 +1,5 @@
 package com.shuaya.rodchongstudio.shuayamusic.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Gravity;
@@ -13,8 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.shuaya.rodchongstudio.shuayamusic.models.Music;
-import com.shuaya.rodchongstudio.shuayamusic.models.RankingModels.RankingMusic;
+import com.shuaya.rodchongstudio.shuayamusic.models.rankingmodels.RankingMusic;
 import com.shuaya.rodchongstudio.shuayamusic.services.MusicService;
 import com.shuaya.rodchongstudio.shuayamusic.ui.BaseActivity;
 import com.shuaya.rodchongstudio.shuayamusic.R;

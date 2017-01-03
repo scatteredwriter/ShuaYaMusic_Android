@@ -1,4 +1,4 @@
-package com.shuaya.rodchongstudio.shuayamusic.models.RankingModels;
+package com.shuaya.rodchongstudio.shuayamusic.models.rankingmodels;
 
 /**
  * Created by RodChong on 2016/12/20.

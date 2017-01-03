@@ -110,39 +110,17 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@id/play_command">
-
-        <com.shuaya.rodchongstudio.shuayamusic.widget.RoundImageView
-            android:id="@+id/play_album_img"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_centerInParent="true"
-            app:BorderColor="#22F5F5F5"
-            app:BorderWidth="10" />
-
-        <TextView
-            android:id="@+id/play_singername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/play_album_img"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="40dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+        android:id="@+id/play_music_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp">
 
         <TextView
             android:id="@+id/play_songname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_above="@id/play_singername"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20sp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="15dp"
             android:ellipsize="end"
@@ -150,6 +128,27 @@
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
+        <TextView
+            android:id="@+id/play_singername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/play_songname"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
     </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/play_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/play_command"
+        android:layout_below="@id/play_music_info" />
 
 </RelativeLayout>

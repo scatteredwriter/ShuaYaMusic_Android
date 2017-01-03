@@ -38,6 +38,7 @@ public class PauseableRotateAnimator {
     }
 
     public void Stop() {
+        animator.start();
         animator.end();
     }
 

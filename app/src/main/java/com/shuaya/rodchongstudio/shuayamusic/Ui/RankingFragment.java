@@ -10,8 +10,8 @@ import android.widget.ListView;
 
 import com.google.gson.Gson;
 import com.shuaya.rodchongstudio.shuayamusic.adapters.RankingsAdapter;
-import com.shuaya.rodchongstudio.shuayamusic.models.RankingModels.RankingBean;
-import com.shuaya.rodchongstudio.shuayamusic.models.RankingModels.RankingMusic;
+import com.shuaya.rodchongstudio.shuayamusic.models.rankingmodels.RankingBean;
+import com.shuaya.rodchongstudio.shuayamusic.models.rankingmodels.RankingMusic;
 import com.shuaya.rodchongstudio.shuayamusic.R;
 import com.shuaya.rodchongstudio.shuayamusic.services.MusicService;
 

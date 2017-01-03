@@ -154,7 +154,7 @@ public class MusicService extends Service {
         public void AddMusicChangedListener(ReceiveMusic paramReceiveMusic) {
             receiveMusics.add(paramReceiveMusic);
             if (current_music != null)
-                NotifyMusicChanged();
+                paramReceiveMusic.GetMusic(current_music, mediaPlayer.getDuration(), mediaPlayer.getCurrentPosition());
         }
 
         public Music GetCurrentMusic() {
