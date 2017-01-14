@@ -32,7 +32,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
+                android:layout_marginRight="10dp"
+                app:BorderWidth="0" />
 
             <ImageView
                 android:id="@+id/current_music_pause_but"
@@ -59,9 +60,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:layout_marginRight="50dp"
                 android:layout_toLeftOf="@id/current_music_pause_but"
                 android:layout_toRightOf="@id/current_music_img"
-                android:layout_marginRight="50dp"
                 android:orientation="vertical">
 
                 <TextView

@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 public class LyricView extends View {
 
     private Lyric lyric;
-    private int textsize = 55;
+    private int textsize = 50;
     private int lineheight = 55;
     private float shade_height = 0;
     private int current_line_color = 0xFFFFFFFF;
@@ -37,14 +37,23 @@ public class LyricView extends View {
 
     public LyricView(Context context) {
         super(context);
+        setLyricPaint();
     }
 
     public LyricView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        setLyricPaint();
     }
 
     public LyricView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        setLyricPaint();
+    }
+
+    private void setLyricPaint() {
+        lyric_paint.setTextAlign(Paint.Align.CENTER);
+        lyric_paint.setAntiAlias(true);
+        lyric_paint.setTextSize(textsize);
     }
 
     private void invalidateView() {
@@ -178,8 +187,6 @@ public class LyricView extends View {
     protected void onDraw(Canvas canvas) {
         long start_height = 0L;
         Rect rect = new Rect();
-        lyric_paint.setTextAlign(Paint.Align.CENTER);
-        lyric_paint.setTextSize(textsize);
         if (lyric == null || lyric.getLyric().isEmpty())
             return;
         for (int i = 0; i < lyric.getLyric().size(); i++) {

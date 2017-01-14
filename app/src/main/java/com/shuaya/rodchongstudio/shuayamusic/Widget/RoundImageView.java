@@ -21,7 +21,7 @@ import com.shuaya.rodchongstudio.shuayamusic.R;
 
 public class RoundImageView extends ImageView {
     private Paint paint = new Paint();
-    private int border_width;
+    private int border_width = 0;
     private int border_color;
 
     public RoundImageView(Context paramContext) {
@@ -66,6 +66,8 @@ public class RoundImageView extends ImageView {
             this.paint.reset();
             paramCanvas.drawBitmap(localBitmap, localRect1, localRect2, this.paint);
 
+            if (border_width == 0)
+                return;
             Paint paint = new Paint();
             paint.setColor(border_color);
             paint.setStyle(Paint.Style.STROKE);

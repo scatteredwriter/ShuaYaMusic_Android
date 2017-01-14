@@ -2,13 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
     tools:context="com.shuaya.rodchongstudio.shuayamusic.ui.PlayLyricFragment">
 
     <com.shuaya.rodchongstudio.shuayamusic.widget.LyricView
         android:id="@+id/play_lyric_lyricview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_margin="10dp" />
+        android:layout_gravity="center" />
 
 </FrameLayout>
