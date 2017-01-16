@@ -4,7 +4,10 @@
     <string name="rankings_api">http://i.y.qq.com/v8/fcg-bin/fcg_v8_toplist_cp.fcg?tpl=20&amp;page=detail&amp;type=top&amp;topid={0}&amp;g_tk=5381&amp;loginUin=0&amp;hostUin=0&amp;format=json&amp;inCharset=utf8&amp;outCharset=utf-8&amp;notice=0&amp;platform=yqq</string>
     <string name="new_albums_api">http://c.y.qq.com/v8/fcg-bin/album_library?g_tk=5381&amp;jsonpCallback=GetAlbumListJsonCallback&amp;loginUin=0&amp;hostUin=0&amp;format=jsonp&amp;inCharset=utf8&amp;outCharset=utf-8&amp;notice=0&amp;platform=yqq&amp;needNewCode=0&amp;cmd=get_album_info&amp;page=0&amp;pagesize=50&amp;sort={0}&amp;language=-1&amp;genre=0&amp;year=1&amp;pay=0&amp;type=-1&amp;company=-1</string>
     <string name="album_image_api">http://i.gtimg.cn/music/photo/mid_album_{0}/{1}/{2}/{3}.jpg</string>
-    <string name="singer_image_api">http://i.gtimg.cn/music/photo/mid_singer_{0}/{1}/{2}/{3}.jpg</string>
+    <string name="singer_image_api">http://y.gtimg.cn/music/photo_new/T001R{0}x{0}M000{1}.jpg?max_age=2592000</string>
     <string name="music_online_api">http://ws.stream.qqmusic.qq.com/C100{0}.m4a?fromtag=38</string>
     <string name="lyric_api">http://c.y.qq.com/lyric/fcgi-bin/fcg_query_lyric_new.fcg?callback=MusicJsonCallback_lrc&amp;songmid={0}&amp;g_tk=5381&amp;jsonpCallback=MusicJsonCallback_lrc&amp;loginUin=0&amp;hostUin=0&amp;format=jsonp&amp;inCharset=utf8&amp;outCharset=utf-8&amp;notice=0&amp;platform=yqq&amp;needNewCode=0</string>
+    <string name="singer_song_api">http://i.y.qq.com/v8/fcg-bin/fcg_v8_singer_track_cp.fcg?g_tk=5381&amp;format=jsonp&amp;inCharset=utf8&amp;outCharset=utf-8&amp;singermid={0}&amp;order=listen&amp;begin={1}&amp;num={2}&amp;songstatus=1</string>
+    <string name="singer_album_api">http://i.y.qq.com/v8/fcg-bin/fcg_v8_singer_album.fcg?g_tk=5381&amp;format=jsonp&amp;inCharset=utf8&amp;outCharset=utf-8&amp;singermid={0}&amp;order=time&amp;begin={1}&amp;num={2}&amp;exstatus=1</string>
+    <string name="album_api">http://c.y.qq.com/v8/fcg-bin/fcg_v8_album_info_cp.fcg?albummid={0}&amp;g_tk=5381&amp;loginUin=0&amp;hostUin=0&amp;format=jsonp&amp;inCharset=utf8&amp;outCharset=utf-8&amp;notice=0&amp;platform=yqq&amp;needNewCode=0</string>
 </resources>

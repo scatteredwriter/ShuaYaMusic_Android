@@ -53,8 +53,10 @@ public class SearchFragment extends Fragment {
     private ListView listview;
     private SearchView searchview;
     private View listview_header;
+    private ZhidaBean zhida;
     private String keyword;
     private int p;
+    private int total_num;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -159,6 +161,7 @@ public class SearchFragment extends Fragment {
                         Gson gson = new Gson();
                         try {
                             final SearchBean lists = gson.fromJson(json, SearchBean.class);
+                            total_num = lists.getData().getSong().getTotalnum();
                             getActivity().runOnUiThread(new Runnable() {
                                 @Override
                                 public void run() {
@@ -170,9 +173,9 @@ public class SearchFragment extends Fragment {
                                         SearchAdapter adapter = (SearchAdapter) ((HeaderViewListAdapter) listview.getAdapter()).getWrappedAdapter();
                                         adapter.addAll(lists.getData().getSong().getList());
                                     }
+                                    AddHeader(lists);
                                 }
                             });
-                            AddHeader(lists);
                         } catch (Exception e) {
                             return;
                         }
@@ -183,7 +186,7 @@ public class SearchFragment extends Fragment {
 
         private void AddHeader(SearchBean lists) {
             if (lists.getData().getZhida().getType() == 2 || lists.getData().getZhida().getType() == 3) {
-                final ZhidaBean zhida = lists.getData().getZhida();
+                zhida = lists.getData().getZhida();
                 final ImageView img = (ImageView) listview_header.findViewById(R.id.search_zhida_img);
                 final TextView main_text = (TextView) listview_header.findViewById(R.id.search_zhida_main_text);
                 final TextView second_text = (TextView) listview_header.findViewById(R.id.search_zhida_second_text);
@@ -192,9 +195,7 @@ public class SearchFragment extends Fragment {
                     case 2: //歌手
                         api = getString(R.string.singer_image_api);
                         api = api.replace("{0}", "90");
-                        api = api.replace("{1}", String.valueOf(zhida.getSingermid().charAt(zhida.getSingermid().length() - 2)));
-                        api = api.replace("{2}", String.valueOf(zhida.getSingermid().charAt(zhida.getSingermid().length() - 1)));
-                        api = api.replace("{3}", zhida.getSingermid());
+                        api = api.replace("{1}", zhida.getSingermid());
                         HttpUtil.DefaultGetRequest(api, new Callback() {
                             @Override
                             public void onFailure(Call call, IOException e) {
@@ -254,8 +255,11 @@ public class SearchFragment extends Fragment {
                         });
                         break;
                 }
-                if (listview.getHeaderViewsCount() == 0)
+                if (listview.getHeaderViewsCount() == 0) {
                     listview.addHeaderView(listview_header);
+                }
+            } else {
+                listview.removeHeaderView(listview_header);
             }
         }
     }
@@ -271,7 +275,7 @@ public class SearchFragment extends Fragment {
 
         @Override
         public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-            if (isloading == false && keyword != null && totalItemCount != 0 && (firstVisibleItem == (totalItemCount / 3))) {
+            if (isloading == false && keyword != null && total_num != totalItemCount && totalItemCount != 0 && (firstVisibleItem == (totalItemCount / 3))) {
                 isloading = true;
                 Addmore();
             }
@@ -326,6 +330,14 @@ public class SearchFragment extends Fragment {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             if (listview.getHeaderViewsCount() != 0 && position == 0) {
+                switch (zhida.getType()) {
+                    case 2: //歌手
+                        ((BaseActivity) getContext()).ChangedFragment(SingerFragment.class, zhida.getSingermid(), zhida.getSingername());
+                        break;
+                    case 3: //专辑
+                        ((BaseActivity) getContext()).ChangedFragment(AlbumFragment.class, zhida.getAlbummid(), zhida.getAlbumname());
+                        break;
+                }
             } else {
                 SearchMusic music = (SearchMusic) parent.getAdapter().getItem(position);
                 DatabaseHelper.AddMusicItem(music);

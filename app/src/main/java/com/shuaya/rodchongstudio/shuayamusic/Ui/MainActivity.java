@@ -148,7 +148,8 @@ public class MainActivity extends BaseActivity implements ReceiveMusic {
         navigationView.findFocus();
     }
 
-    private void ChangedFragment(Class<?> fragment_class) {
+    @Override
+    public void ChangedFragment(Class<?> fragment_class, String... args) {
         if (current_fragment == null) { //初始化
             musicWallFragment = new MusicWallFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -165,6 +166,14 @@ public class MainActivity extends BaseActivity implements ReceiveMusic {
             } else if (fragment_class == MusicWallFragment.class) {
                 transaction.show(musicWallFragment);
                 current_fragment = musicWallFragment;
+            } else if (fragment_class == SingerFragment.class && args.length != 0) { //打开歌手详情
+                SingerFragment singerFragment = SingerFragment.newInstance(args[0], args[1]);
+                transaction.add(R.id.main_framelayout, singerFragment);
+                current_fragment = singerFragment;
+            } else if (fragment_class == AlbumFragment.class && args.length != 0) { //打开专辑详情
+                AlbumFragment albumFragment = AlbumFragment.newInstance(args[0], args[1]);
+                transaction.add(R.id.main_framelayout, albumFragment);
+                current_fragment = albumFragment;
             }
             transaction.commit();
         } else if (current_fragment.getClass() == MusicWallFragment.class) { //从音乐墙到别的Fragment
@@ -175,7 +184,18 @@ public class MainActivity extends BaseActivity implements ReceiveMusic {
                 transaction.add(R.id.main_framelayout, searchFragment);
                 current_fragment = searchFragment;
                 transaction.commit();
-
+            } else if (fragment_class == SingerFragment.class && args.length != 0) { //打开歌手详情
+                SingerFragment singerFragment = SingerFragment.newInstance(args[0], args[1]);
+                transaction.hide(current_fragment);
+                transaction.add(R.id.main_framelayout, singerFragment);
+                current_fragment = singerFragment;
+                transaction.commit();
+            } else if (fragment_class == AlbumFragment.class && args.length != 0) { //打开专辑详情
+                AlbumFragment albumFragment = AlbumFragment.newInstance(args[0], args[1]);
+                transaction.hide(current_fragment);
+                transaction.add(R.id.main_framelayout, albumFragment);
+                current_fragment = albumFragment;
+                transaction.commit();
             }
         }
     }

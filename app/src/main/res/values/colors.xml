@@ -5,6 +5,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="black_color">#FF000000</color>
+    <color name="light_grey">#D3D3D3</color>
     <color name="mask_black_color">#88939393</color>
     <color name="mask_play_background_color">#88939393</color>
     <color name="second_app_theme">#a5a5a5</color>

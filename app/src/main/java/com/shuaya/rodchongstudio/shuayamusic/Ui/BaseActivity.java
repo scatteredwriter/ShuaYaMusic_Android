@@ -27,4 +27,8 @@ public class BaseActivity extends AppCompatActivity {
     public IBinder GetBinder() {
         return null;
     }
+
+    public void ChangedFragment(Class<?> fragment_class, String... args) {
+        return;
+    }
 }

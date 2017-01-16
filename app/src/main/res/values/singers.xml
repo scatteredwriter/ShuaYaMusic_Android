@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="singer_tabs">
+
+        <item>单曲</item>
+        <item>专辑</item>
+        <item>歌手简介</item>
+
+    </array>
+
+</resources>

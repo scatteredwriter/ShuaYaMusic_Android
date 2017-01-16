@@ -13,7 +13,7 @@ import okhttp3.Request;
 
 public class HttpUtil {
 
-    static OkHttpClient client = new OkHttpClient();
+    private static OkHttpClient client = new OkHttpClient();
 
     public static void DefaultGetRequest(final String url, final Callback callback) {
         new Thread(new Runnable() {

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="album_tabs">
+
+        <item>歌曲</item>
+        <item>详情</item>
+
+    </array>
+
+</resources>

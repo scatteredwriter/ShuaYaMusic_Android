@@ -15,7 +15,9 @@ import android.widget.Toast;
 import com.shuaya.rodchongstudio.shuayamusic.R;
 import com.shuaya.rodchongstudio.shuayamusic.models.searchmodels.SearchMusic;
 import com.shuaya.rodchongstudio.shuayamusic.services.MusicService;
+import com.shuaya.rodchongstudio.shuayamusic.ui.AlbumFragment;
 import com.shuaya.rodchongstudio.shuayamusic.ui.BaseActivity;
+import com.shuaya.rodchongstudio.shuayamusic.ui.SingerFragment;
 import com.shuaya.rodchongstudio.shuayamusic.widget.PopupMenu;
 
 import java.util.List;
@@ -81,9 +83,9 @@ public class SearchAdapter extends ArrayAdapter<SearchMusic> {
             } else if (text.contains(Application.getContext().getResources().getStringArray(R.array.listview_menus)[3])) { //下载
 
             } else if (text.contains(Application.getContext().getResources().getStringArray(R.array.listview_menus)[4])) { //歌手详情
-
+                ((BaseActivity) getContext()).ChangedFragment(SingerFragment.class, music.getSinger().get(0).getMid(), music.getSinger().get(0).getName());
             } else if (text.contains(Application.getContext().getResources().getStringArray(R.array.listview_menus)[5])) { //专辑详情
-
+                ((BaseActivity) getContext()).ChangedFragment(AlbumFragment.class, music.getAlbummid(), music.getAlbumname());
             }
             popupMenu.dismiss();
         }

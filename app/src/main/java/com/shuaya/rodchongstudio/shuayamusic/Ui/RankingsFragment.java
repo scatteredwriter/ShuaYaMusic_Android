@@ -27,6 +27,7 @@ public class RankingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_rankings, container, false);
+
         setTab(view);
 
         return view;
